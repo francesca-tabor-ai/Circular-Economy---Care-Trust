@@ -1,47 +1,67 @@
 
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
+import ScrollToTop from './components/ScrollToTop';
 import LandingPage from './components/LandingPage';
-import Dashboard from './components/Dashboard';
-import CareRequestFlow from './components/CareRequestFlow';
-import ProviderPool from './components/ProviderPool';
-import Membership from './components/Membership';
-import About from './components/About';
 import FounderChat from './components/FounderChat';
+
+// Lazy load components for better performance
+const Dashboard = lazy(() => import('./components/Dashboard'));
+const CareRequestFlow = lazy(() => import('./components/CareRequestFlow'));
+const ProviderPool = lazy(() => import('./components/ProviderPool'));
+const Membership = lazy(() => import('./components/Membership'));
+const About = lazy(() => import('./components/About'));
+
+const LoadingFallback = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="w-12 h-12 border-2 border-brand-grey-200 border-t-brand-black rounded-full animate-spin"></div>
+  </div>
+);
 
 const App: React.FC = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/dashboard" element={
           <Layout>
-            <Dashboard />
+            <Suspense fallback={<LoadingFallback />}>
+              <Dashboard />
+            </Suspense>
             <FounderChat />
           </Layout>
         } />
         <Route path="/request" element={
           <Layout>
-            <CareRequestFlow />
+            <Suspense fallback={<LoadingFallback />}>
+              <CareRequestFlow />
+            </Suspense>
             <FounderChat />
           </Layout>
         } />
         <Route path="/providers" element={
           <Layout>
-            <ProviderPool />
+            <Suspense fallback={<LoadingFallback />}>
+              <ProviderPool />
+            </Suspense>
             <FounderChat />
           </Layout>
         } />
         <Route path="/membership" element={
           <Layout>
-            <Membership />
+            <Suspense fallback={<LoadingFallback />}>
+              <Membership />
+            </Suspense>
             <FounderChat />
           </Layout>
         } />
         <Route path="/about" element={
           <Layout>
-            <About />
+            <Suspense fallback={<LoadingFallback />}>
+              <About />
+            </Suspense>
             <FounderChat />
           </Layout>
         } />
