@@ -43,13 +43,13 @@ const LandingPage: React.FC = () => {
         {/* Hero Content */}
         <div className="relative z-10 max-w-4xl mx-auto py-32">
           <h1 className="text-5xl md:text-6xl font-bold text-brand-white tracking-tight leading-[1.1] mb-8">
-            Childcare that doesn't fall apart when life does.
+            Community-powered childcare for the circular economy.
           </h1>
           <p className="text-xl md:text-2xl text-brand-white/90 font-normal leading-generous mb-6 max-w-2xl mx-auto">
-            Membership access to trusted, verified local carers — with guaranteed backup when plans change.
+            Join a local network of verified carers sharing resources, building resilience, and strengthening community infrastructure.
           </p>
           <p className="text-lg text-brand-white/80 font-light leading-relaxed mb-16">
-            Because families shouldn't have to panic when childcare cancels.
+            Because care should circulate within communities, not break down when families need it most.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
@@ -73,13 +73,13 @@ const LandingPage: React.FC = () => {
         <div className="max-w-4xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 text-center">
             <p className="text-sm font-bold text-brand-black uppercase tracking-widest">
-              Trusted by working families.
+              Community-owned networks.
             </p>
             <p className="text-sm font-bold text-brand-black uppercase tracking-widest">
-              Verified providers.
+              Shared local resources.
             </p>
             <p className="text-sm font-bold text-brand-black uppercase tracking-widest">
-              Designed for reliability, not luck.
+              Circular economy principles.
             </p>
           </div>
         </div>
@@ -97,10 +97,10 @@ const LandingPage: React.FC = () => {
           <p className="text-xl text-brand-grey-700 font-normal leading-relaxed">Risky "I hope this works" decisions.</p>
         </div>
         <p className="text-lg text-brand-grey-600 font-light leading-generous mb-6">
-          Modern families are running on fragile care systems — and when they break, the cost is immediate.
+          Traditional care models create waste — wasted time, wasted resources, wasted community potential. The circular economy approach builds resilience through shared local networks.
         </p>
         <p className="text-2xl font-bold text-brand-black leading-relaxed">
-          You deserve something stronger.
+          Care that circulates, not care that breaks.
         </p>
       </section>
 
@@ -108,31 +108,31 @@ const LandingPage: React.FC = () => {
       <section className="bg-brand-grey-50 py-32">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-black tracking-tight leading-[1.2] mb-10">
-            A membership network built for reliability.
+            A circular economy membership network.
           </h2>
-          <p className="text-xl text-brand-grey-600 font-normal leading-relaxed mb-12">We combine:</p>
+          <p className="text-xl text-brand-grey-600 font-normal leading-relaxed mb-12">We build community resilience through:</p>
           <div className="space-y-6 mb-16">
             <div className="flex items-start gap-4 group hover:translate-x-1 transition-transform duration-200">
               <span className="text-2xl text-brand-black font-bold mt-1 group-hover:scale-110 transition-transform duration-200">✓</span>
-              <p className="text-lg text-brand-grey-700 font-normal leading-relaxed">Pre-verified, trusted local care providers</p>
+              <p className="text-lg text-brand-grey-700 font-normal leading-relaxed">Local provider networks that share resources within communities</p>
             </div>
             <div className="flex items-start gap-4 group hover:translate-x-1 transition-transform duration-200">
               <span className="text-2xl text-brand-black font-bold mt-1 group-hover:scale-110 transition-transform duration-200">✓</span>
-              <p className="text-lg text-brand-grey-700 font-normal leading-relaxed">Priority booking for members</p>
+              <p className="text-lg text-brand-grey-700 font-normal leading-relaxed">Community-owned infrastructure that reduces waste and builds resilience</p>
             </div>
             <div className="flex items-start gap-4 group hover:translate-x-1 transition-transform duration-200">
               <span className="text-2xl text-brand-black font-bold mt-1 group-hover:scale-110 transition-transform duration-200">✓</span>
-              <p className="text-lg text-brand-grey-700 font-normal leading-relaxed">Emergency backup care access</p>
+              <p className="text-lg text-brand-grey-700 font-normal leading-relaxed">Shared economy principles that keep care circulating locally</p>
             </div>
             <div className="flex items-start gap-4 group hover:translate-x-1 transition-transform duration-200">
               <span className="text-2xl text-brand-black font-bold mt-1 group-hover:scale-110 transition-transform duration-200">✓</span>
-              <p className="text-lg text-brand-grey-700 font-normal leading-relaxed">Predictable monthly cost — no panic pricing</p>
+              <p className="text-lg text-brand-grey-700 font-normal leading-relaxed">Sustainable, predictable access — no resource waste, no panic pricing</p>
             </div>
           </div>
           <div className="space-y-4 text-lg text-brand-grey-600 font-light leading-relaxed">
-            <p>No endless searching.</p>
-            <p>No risky last-minute decisions.</p>
-            <p>No starting from zero every time.</p>
+            <p>No wasted time searching.</p>
+            <p>No wasted resources on failed matches.</p>
+            <p>No breaking down — only circulating care within your community.</p>
           </div>
         </div>
       </section>
@@ -145,23 +145,23 @@ const LandingPage: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-16">
           <div>
             <div className="text-5xl font-bold text-brand-black mb-6 leading-none">1.</div>
-            <h3 className="text-2xl font-bold text-brand-black mb-5 leading-relaxed">Join the membership</h3>
+            <h3 className="text-2xl font-bold text-brand-black mb-5 leading-relaxed">Join the circular network</h3>
             <p className="text-lg text-brand-grey-600 font-light leading-generous">
-              Get access to a trusted local care network.
+              Connect to your local community care network.
             </p>
           </div>
           <div>
             <div className="text-5xl font-bold text-brand-black mb-6 leading-none">2.</div>
-            <h3 className="text-2xl font-bold text-brand-black mb-5 leading-relaxed">Set up your family profile</h3>
+            <h3 className="text-2xl font-bold text-brand-black mb-5 leading-relaxed">Share your family needs</h3>
             <p className="text-lg text-brand-grey-600 font-light leading-generous">
-              So providers already know what matters for your children.
+              Help the community understand how to support your family.
             </p>
           </div>
           <div>
             <div className="text-5xl font-bold text-brand-black mb-6 leading-none">3.</div>
-            <h3 className="text-2xl font-bold text-brand-black mb-5 leading-relaxed">Book or request backup care anytime</h3>
+            <h3 className="text-2xl font-bold text-brand-black mb-5 leading-relaxed">Access shared community resources</h3>
             <p className="text-lg text-brand-grey-600 font-light leading-generous">
-              When plans change, you're already covered.
+              When you need care, the community network responds.
             </p>
           </div>
         </div>
@@ -171,23 +171,23 @@ const LandingPage: React.FC = () => {
       <section className="bg-brand-black text-brand-white py-32">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.2] mb-8">
-            When care falls through, you don't start from scratch.
+            When care falls through, the community network responds.
           </h2>
           <p className="text-xl text-brand-grey-300 font-normal mb-6 leading-generous">
-            Members get priority access to backup care requests — even at short notice.
+            Members access shared community resources — care circulates, it doesn't break down.
           </p>
           <p className="text-lg text-brand-grey-400 font-light leading-relaxed">
-            Because reliability shouldn't depend on luck or group chats.
+            Because resilience comes from community infrastructure, not individual luck.
           </p>
         </div>
       </section>
 
       {/* TRUST SECTION */}
       <section className="max-w-4xl mx-auto px-6 py-32">
-        <h2 className="text-4xl md:text-5xl font-bold text-brand-black tracking-tight leading-[1.2] mb-10">
-          Every provider is verified — before they ever meet your family.
-        </h2>
-        <p className="text-xl text-brand-grey-600 font-normal mb-12 leading-relaxed">We verify:</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-brand-black tracking-tight leading-[1.2] mb-10">
+            Every provider strengthens the community network.
+          </h2>
+          <p className="text-xl text-brand-grey-600 font-normal mb-12 leading-relaxed">We build trust through:</p>
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           <div className="flex items-start gap-4">
             <span className="text-xl text-brand-black font-bold mt-1">•</span>
@@ -207,7 +207,7 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
         <p className="text-2xl font-bold text-brand-black leading-relaxed">
-          Trust is designed into the system — not left to chance.
+          Community trust is built into the network — shared resources, shared responsibility.
         </p>
       </section>
 
@@ -215,58 +215,58 @@ const LandingPage: React.FC = () => {
       <section className="bg-brand-grey-50 py-32">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-black tracking-tight leading-[1.2] mb-12">
-            Built by someone who believes reliability is infrastructure.
+            Built for the circular economy movement.
           </h2>
           <p className="text-lg text-brand-grey-600 font-light leading-generous mb-6">
-            Our founder built this platform after seeing how fragile modern systems are when they rely on speed over resilience.
+            Our platform applies circular economy principles to childcare — reducing waste, building community resilience, and keeping resources circulating locally.
           </p>
           <p className="text-lg text-brand-grey-600 font-light leading-generous mb-8">
-            Families need systems that hold under pressure — not ones that work only when everything goes perfectly.
+            We believe care should be community-owned infrastructure, not a fragile individual burden.
           </p>
           <p className="text-2xl font-bold text-brand-black leading-relaxed">
-            This is care infrastructure designed to last.
+            This is community care infrastructure for the circular economy.
           </p>
         </div>
       </section>
 
       {/* ICP ROI SECTION */}
       <section className="max-w-4xl mx-auto px-6 py-32">
-        <h2 className="text-4xl md:text-5xl font-bold text-brand-black tracking-tight leading-[1.2] mb-10">
-          What membership really gives you
-        </h2>
-        <p className="text-xl text-brand-grey-600 font-normal mb-12 leading-relaxed">More than childcare access:</p>
-        <div className="space-y-6 mb-16">
-          <div className="flex items-start gap-4">
-            <span className="text-xl text-brand-black font-bold mt-1">•</span>
-            <p className="text-lg text-brand-grey-700 font-normal leading-relaxed">Fewer missed workdays</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-brand-black tracking-tight leading-[1.2] mb-10">
+            What the circular network gives your community
+          </h2>
+          <p className="text-xl text-brand-grey-600 font-normal mb-12 leading-relaxed">More than individual access:</p>
+          <div className="space-y-6 mb-16">
+            <div className="flex items-start gap-4">
+              <span className="text-xl text-brand-black font-bold mt-1">•</span>
+              <p className="text-lg text-brand-grey-700 font-normal leading-relaxed">Reduced resource waste — care circulates, not breaks down</p>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="text-xl text-brand-black font-bold mt-1">•</span>
+              <p className="text-lg text-brand-grey-700 font-normal leading-relaxed">Community resilience through shared local networks</p>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="text-xl text-brand-black font-bold mt-1">•</span>
+              <p className="text-lg text-brand-grey-700 font-normal leading-relaxed">Sustainable economic models that support local providers</p>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="text-xl text-brand-black font-bold mt-1">•</span>
+              <p className="text-lg text-brand-grey-700 font-normal leading-relaxed">Stronger communities built on shared care infrastructure</p>
+            </div>
           </div>
-          <div className="flex items-start gap-4">
-            <span className="text-xl text-brand-black font-bold mt-1">•</span>
-            <p className="text-lg text-brand-grey-700 font-normal leading-relaxed">Less emergency stress</p>
-          </div>
-          <div className="flex items-start gap-4">
-            <span className="text-xl text-brand-black font-bold mt-1">•</span>
-            <p className="text-lg text-brand-grey-700 font-normal leading-relaxed">Less time spent searching and vetting</p>
-          </div>
-          <div className="flex items-start gap-4">
-            <span className="text-xl text-brand-black font-bold mt-1">•</span>
-            <p className="text-lg text-brand-grey-700 font-normal leading-relaxed">More confidence saying "yes" to work and life</p>
-          </div>
-        </div>
-        <p className="text-2xl font-bold text-brand-black leading-relaxed">
-          Peace of mind is not a luxury.<br />
-          It's economic stability.
-        </p>
+          <p className="text-2xl font-bold text-brand-black leading-relaxed">
+            Circular economy principles for care.<br />
+            Community-owned, community-sustained.
+          </p>
       </section>
 
       {/* SOCIAL PROOF */}
       <section className="bg-brand-grey-50 py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <blockquote className="text-2xl text-brand-grey-700 font-light italic mb-4">
-            "Knowing we have backup care changed how I work and plan our week."
+            "Being part of a community care network means we're all supporting each other. It's not just about us — it's about building something sustainable together."
           </blockquote>
           <p className="text-sm text-brand-grey-500 uppercase tracking-widest">
-            — Member Parent
+            — Circular Economy Member
           </p>
         </div>
       </section>
@@ -292,10 +292,10 @@ const LandingPage: React.FC = () => {
       <section className="bg-brand-black text-brand-white py-32">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.2] mb-8">
-            You shouldn't have to wonder what happens when childcare cancels.
+            Join the circular economy movement for childcare.
           </h2>
           <p className="text-2xl text-brand-grey-300 font-normal mb-16 leading-relaxed">
-            You should already know you're covered.
+            Build community resilience through shared local care networks.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
@@ -318,8 +318,8 @@ const LandingPage: React.FC = () => {
       <footer className="bg-brand-white border-t border-brand-grey-100 py-12">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <p className="text-sm text-brand-grey-500 font-light">
-            Reliable care is community infrastructure.<br />
-            We're here to build it with you.
+            Circular economy care networks.<br />
+            Community-owned, community-sustained.
           </p>
         </div>
       </footer>

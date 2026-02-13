@@ -6,9 +6,9 @@
 
 ## The Product Definition
 
-### The Single Value Prop: Zero-Gap Reliability
+### The Single Value Prop: Circular Economy Care Networks
 
-We define care as a critical system. When a primary care provider fails, the household economy stalls. CareTrust provides the automated redundancy and verified human nodes required to keep the system running.
+We apply circular economy principles to childcare. When care needs arise, community networks respond — resources circulate, they don't break down. CareTrust builds community-owned infrastructure that reduces waste, builds resilience, and keeps care flowing locally.
 
 ### Key Metrics
 
@@ -18,10 +18,10 @@ We define care as a critical system. When a primary care provider fails, the hou
 
 ### Core Functional Requirements
 
-1. **Predictability** - Standardized pricing and hour-based care budgeting.
-2. **Verification** - Multi-factor background, skill, and EQ assessments.
-3. **Redundancy** - Instant failover to backup providers when primary care defaults.
-4. **Intelligence** - AI-generated briefs ensuring flawless handovers.
+1. **Circular Networks** - Community-owned care networks that keep resources circulating locally.
+2. **Shared Resources** - Reduced waste through shared economy models and community resilience.
+3. **Community Infrastructure** - Local networks that respond when care needs arise.
+4. **Sustainability** - Economic models that support local providers and reduce resource waste.
 
 ### System Specifications
 
@@ -36,9 +36,9 @@ The engineering behind our "Trust Protocol."
 
 ### A Message from the Founder
 
-> "Reliability is a design problem. We spent decades optimizing cloud infrastructure and logistics networks, yet we left the most critical part of our social infrastructure—childcare—to chance."
+> "The circular economy isn't just about products — it's about how we organize care. We've applied circular economy principles to build community-owned care networks that reduce waste, build resilience, and keep resources circulating locally."
 >
-> "CareTrust is my attempt to apply systems thinking to care. We aren't just matching you with a person; we are enrolling you in a network that refuses to fail. We've built the redundancy, the verification layers, and the intelligence engine so that you can focus on the work that matters, knowing your foundation is solid."
+> "CareTrust is my attempt to apply circular economy thinking to childcare. We aren't just matching you with a person; we're building community infrastructure. Care circulates within communities, it doesn't break down. We've built the networks, the shared resources, and the community models so that care becomes sustainable, resilient infrastructure."
 >
 > — **Elena Marceau**, Founder & CEO
 
