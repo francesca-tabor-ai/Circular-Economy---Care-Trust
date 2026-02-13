@@ -1,7 +1,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { chatWithFounder } from '../geminiService';
+import { chatWithFounder, isApiKeyConfigured } from '../geminiService';
 
 const STARTER_PROBES: Record<string, string[]> = {
   '/': [
@@ -64,6 +64,14 @@ const FounderChat: React.FC = () => {
       setHasIntroduced(true);
       const triggerIntro = async () => {
         setIsLoading(true);
+        if (!isApiKeyConfigured()) {
+          setMessages([{ 
+            role: 'model', 
+            text: "Google API key is required to use this feature. Please set GEMINI_API_KEY in your .env.local file." 
+          }]);
+          setIsLoading(false);
+          return;
+        }
         const intro = await chatWithFounder([], "Please introduce yourself as Elena Marceau and briefly explain how you can help with care reliability.");
         setMessages([{ role: 'model', text: intro || "Hello. I'm Elena Marceau. I built CareTrust to ensure families have the infrastructure they need when care falls through. How can I assist you today?" }]);
         setIsLoading(false);
@@ -79,6 +87,15 @@ const FounderChat: React.FC = () => {
     if (!customMsg) setInput('');
     setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
     setIsLoading(true);
+
+    if (!isApiKeyConfigured()) {
+      setMessages(prev => [...prev, { 
+        role: 'model', 
+        text: "Google API key is required to use this feature. Please set GEMINI_API_KEY in your .env.local file." 
+      }]);
+      setIsLoading(false);
+      return;
+    }
 
     const history = messages.map(m => ({
       role: m.role,
@@ -121,17 +138,30 @@ const FounderChat: React.FC = () => {
                 <p className="text-xs font-bold uppercase tracking-widest">Initializing Connection...</p>
               </div>
             )}
-            {messages.map((m, i) => (
-              <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[85%] p-5 rounded-[1.5rem] text-[14px] leading-relaxed shadow-sm ${
-                  m.role === 'user' 
-                    ? 'bg-brand-black text-brand-white font-medium' 
-                    : 'bg-brand-grey-50 border border-brand-grey-100 text-brand-grey-900 font-light'
-                }`}>
-                  {m.text}
+            {messages.map((m, i) => {
+              const isApiKeyError = m.role === 'model' && m.text.includes('Google API key is required');
+              return (
+                <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                  <div className={`max-w-[85%] p-5 rounded-[1.5rem] text-[14px] leading-relaxed shadow-sm ${
+                    isApiKeyError
+                      ? 'bg-red-50 border-2 border-red-200 text-red-800 font-medium'
+                      : m.role === 'user' 
+                        ? 'bg-brand-black text-brand-white font-medium' 
+                        : 'bg-brand-grey-50 border border-brand-grey-100 text-brand-grey-900 font-light'
+                  }`}>
+                    {isApiKeyError && (
+                      <div className="flex items-start gap-2 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        <span className="font-bold">API Key Required</span>
+                      </div>
+                    )}
+                    {m.text}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
             {isLoading && (
               <div className="flex justify-start">
                 <div className="bg-brand-grey-50 p-4 rounded-2xl border border-brand-grey-100 flex gap-1">

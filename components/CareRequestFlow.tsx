@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { generateCareBrief } from '../geminiService';
+import { generateCareBrief, isApiKeyConfigured } from '../geminiService';
 
 const CareRequestFlow: React.FC = () => {
   const [step, setStep] = useState(1);
@@ -11,6 +11,13 @@ const CareRequestFlow: React.FC = () => {
 
   const handleGenerateBrief = async () => {
     setIsGeneratingBrief(true);
+    
+    if (!isApiKeyConfigured()) {
+      setBrief("Google API key is required to generate care briefs. Please set GEMINI_API_KEY in your .env.local file.");
+      setIsGeneratingBrief(false);
+      return;
+    }
+
     // Mock child data
     const children = [
       { name: 'Leo', age: 4, needs: ['Nap at 1PM'], allergies: ['Nuts'] },
@@ -121,6 +128,16 @@ const CareRequestFlow: React.FC = () => {
                       <div className="h-4 bg-slate-100 rounded w-3/4 animate-pulse"></div>
                       <div className="h-4 bg-slate-100 rounded w-full animate-pulse"></div>
                       <div className="h-4 bg-slate-100 rounded w-5/6 animate-pulse"></div>
+                    </div>
+                  ) : brief && brief.includes("Google API key is required") ? (
+                    <div className="flex items-start gap-4 p-4 bg-red-50 rounded-xl border border-red-200 text-red-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                      </svg>
+                      <div>
+                        <p className="font-semibold mb-1">API Key Required</p>
+                        <p className="text-sm">{brief}</p>
+                      </div>
                     </div>
                   ) : (
                     <div className="whitespace-pre-wrap">{brief || "Brief will appear here once generated."}</div>

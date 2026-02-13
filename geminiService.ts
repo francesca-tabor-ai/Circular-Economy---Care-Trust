@@ -1,7 +1,16 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+const API_KEY = process.env.API_KEY || process.env.GEMINI_API_KEY || '';
+
+const ai = API_KEY ? new GoogleGenAI({ apiKey: API_KEY }) : null;
+
+// Check if API key is configured
+export const isApiKeyConfigured = (): boolean => {
+  return !!API_KEY && API_KEY !== 'your_api_key_here';
+};
+
+const API_KEY_ERROR_MESSAGE = "Google API key is required. Please set GEMINI_API_KEY in your .env.local file.";
 
 const ELENA_SYSTEM_INSTRUCTION = `
 You are an AI assistant representing Elena Marceau, Founder & CEO of CareTrust.
@@ -22,6 +31,14 @@ SAFETY: Always prioritize the physical safety of children and the verification o
 `;
 
 export const chatWithFounder = async (history: { role: 'user' | 'model', parts: { text: string }[] }[], message: string) => {
+  if (!isApiKeyConfigured()) {
+    return API_KEY_ERROR_MESSAGE;
+  }
+
+  if (!ai) {
+    return API_KEY_ERROR_MESSAGE;
+  }
+
   try {
     const chat = ai.chats.create({
       model: 'gemini-3-flash-preview',
@@ -41,6 +58,14 @@ export const chatWithFounder = async (history: { role: 'user' | 'model', parts: 
 };
 
 export const generateCareBrief = async (childData: any, requestNotes: string) => {
+  if (!isApiKeyConfigured()) {
+    return API_KEY_ERROR_MESSAGE;
+  }
+
+  if (!ai) {
+    return API_KEY_ERROR_MESSAGE;
+  }
+
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
